@@ -52,7 +52,8 @@
 		//------------------------------------------------------------
 		if ( self.options['cover'] ) {
 			self.menu.css({
-				position: 'absolute'
+				position: 'absolute',
+				'z-index': 5000
 			});
 		}
 		self.menu.wrapInner( '<div class="inner" />');
