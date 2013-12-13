@@ -1,0 +1,36 @@
+.menumucil {
+	overflow: hidden;
+}
+
+.menumucil .pane {
+	overflow: hidden;
+	margin: 0;
+	opacity: 1;
+}
+
+.menumucil .pane .inner {
+	padding: 0;
+	overflow: hidden;
+}
+
+.menumucil .pane.transitions {
+	transition-property: all;
+	-moz-transition-property: all;		/* Firefox 4 */
+	-webkit-transition-property: all;	/* Safari and Chrome */
+	-o-transition-property: all;		/* Opera */
+
+	transition-duration: .5s;
+	-moz-transition-duration: .5s;		/* Firefox 4 */
+	-webkit-transition-duration: .5s;	/* Safari and Chrome */
+	-o-transition-duration: .5s;			/* Opera */
+
+	transition-timing-function: ease-in;
+	-moz-transition-timing-function: ease-in;		/* Firefox 4 */
+	-webkit-transition-timing-function: ease-in;	/* Safari and Chrome */
+	-o-transition-timing-function: ease-in;			/* Opera */
+
+	transition-delay: 0;
+	-moz-transition-delay: 0;		/* Firefox 4 */
+	-webkit-transition-delay: 0;	/* Safari and Chrome */
+	-o-transition-delay: 0;			/* Opera */
+}

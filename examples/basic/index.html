@@ -1,0 +1,47 @@
+<html>
+<head>
+	<link rel="stylesheet" href="../../css/menumucil.css">
+</head>
+<body>
+	<h1>Basic Use</h1>
+	<p>Click the triangle below to see menumucil at its most basic</p>
+	<div class="menumucil">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<p>This content is outside menumucil.</p>
+	
+	<hr />
+	
+	<h1>The Code</h1>
+	<p>Include the necessary css and javascript</p>
+	<pre>
+&lt;link rel=&quot;stylesheet&quot; href=&quot;menumucil/css/menumucil.css&quot;&gt;
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;menumucil/menumucil.js&quot;&gt;&lt;/script&gt;
+	</pre>
+	
+	<p>Create menumucil container</p>
+	<pre>
+&lt;div class=&quot;menumucil&quot;&gt;[Menu Content Here]&lt;/div&gt;
+	</pre>
+	
+	<p>Start menumucil</p>
+	<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+	$(document).ready( function() {
+		$( &#x27;.menumucil&#x27; ).menumucil();
+	});
+&lt;/script&gt;
+	</pre>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="../../menumucil.js"></script>
+<script type="text/javascript">
+	$(document).ready( function() {
+		$( '.menumucil' ).menumucil();
+	});
+</script>
+</html>
