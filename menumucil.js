@@ -84,7 +84,6 @@
 		//------------------------------------------------------------
 		self.clicker = $( document.createElement( 'a' ) );
 		self.clicker.attr( 'href', '#' );
-		self.clicker.html( self.options['closed'] );
 		self.clicker.addClass( 'clicker' );
 		if ( self.options['button_classes'] != null ) {
 		    self.clicker.addClass( self.options['button_classes'] );
@@ -92,12 +91,21 @@
 		self.menu.append( self.clicker );
 		
 		//------------------------------------------------------------
+		//  The main clicker icon
+		//------------------------------------------------------------
+		self.icon = $( document.createElement( 'span' ) );
+		self.icon.addClass( 'icon' );
+		self.clicker.append( self.icon );
+		self.icon.html( self.options['closed'] );
+		
+		
+		//------------------------------------------------------------
 		//  Extra content that needs to be written to the clicker.
 		//  Content counts and that sort of thing.
 		//------------------------------------------------------------
 		self.extra = $( document.createElement( 'span' ) );
 		self.extra.addClass( 'extra' );
-		self.menu.append( self.extra );
+		self.clicker.append( self.extra );
 		
 		//---------------------------------
 		//	Register transition listeners  
@@ -178,7 +186,7 @@
 		}
 		self.pane.removeClass( 'closed' );
 		self.pane.addClass( 'open' );
-		self.clicker.html( self.options['open'] );
+		self.icon.html( self.options['open'] );
 		self.pane.trigger( self.events['open'], [self.id] );
 	}
 	
@@ -197,7 +205,7 @@
 			self.closeNow();
 			self.pane.removeClass('open');
 			self.pane.addClass('closed');
-			self.clicker.html( self.options['closed'] );
+			self.icon.html( self.options['closed'] );
 			self.menu.trigger( self.events['closed'], [self.id] );
 		}, 10 );
 	}
