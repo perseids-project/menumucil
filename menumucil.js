@@ -80,7 +80,7 @@
 		self.pane.addClass( 'closed' );
 		
 		//------------------------------------------------------------
-		//	Create buton
+		//	Create clicker
 		//------------------------------------------------------------
 		self.clicker = $( document.createElement( 'a' ) );
 		self.clicker.attr( 'href', '#' );
@@ -90,6 +90,14 @@
 		    self.clicker.addClass( self.options['button_classes'] );
 		}
 		self.menu.append( self.clicker );
+		
+		//------------------------------------------------------------
+		//  Extra content that needs to be written to the clicker.
+		//  Content counts and that sort of thing.
+		//------------------------------------------------------------
+		self.extra = $( document.createElement( 'span' ) );
+		self.extra.addClass( 'extra' );
+		self.menu.append( self.extra );
 		
 		//---------------------------------
 		//	Register transition listeners  
