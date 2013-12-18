@@ -3,6 +3,13 @@
  */
 ;(function($) {
 	
+	/**
+	 * Holds default options, adds user defined options, and initializes the plugin
+	 *
+	 * @param { obj } _elem The element that becomes the root of the plugin
+	 * @param { obj } _options Configuration options
+	 * @param { string } _id The id of the root element 
+	 */
 	function menumucil( elem, options, id ) {
 		var self = this;
 		self.elem = elem;
@@ -10,6 +17,12 @@
 		self.init( elem, options );
 	}
 	
+	/**
+	 * Holds default options, adds user defined options, and initializes the plugin
+	 *
+	 * @param { obj } _elem The element that becomes the root of the plugin
+	 * @param { obj } _options Configuration options
+	 */
 	menumucil.prototype.init = function( elem, options ) {
 		var self = this;
 		
@@ -39,10 +52,13 @@
 		//-------------------------
 		//	Get the party started  
 		//-------------------------
-		self.create();
+		self.build();
 	}
 	
-	menumucil.prototype.create = function() {
+	/**
+	 * Build the DOM elements needed by the plugin
+	 */
+	menumucil.prototype.build = function() {
 		var self = this;
 		self.menu = $( self.elem );
 		
@@ -101,7 +117,7 @@
 		//	Register click event  
 		//------------------------
 		$( self.clicker ).click( function( _e ) {
-			if ( self.pane.hasClass('open') ) {
+			if ( self.isOpen() ) {
 				self.close();
 			}
 			else if ( self.pane.hasClass('closed') ) {
@@ -111,6 +127,35 @@
 		})
 	}
 	
+	/**
+	 * Check to see if the menu is open.
+	 *
+	 * @return { boolean }
+	 */
+	menumucil.prototype.isOpen = function() {
+		var self = this;
+		if ( self.pane.hasClass('open') ) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Check to see if the menu is closed.
+	 *
+	 * @return { boolean }
+	 */
+	menumucil.prototype.isClosed = function() {
+		var self = this;
+		if ( self.pane.hasClass('closed') ) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Open the menu.
+	 */
 	menumucil.prototype.open = function() {
 		var self = this;
 		self.pane.contentHeight = self.pane.outerHeight();
@@ -129,6 +174,9 @@
 		self.pane.trigger( self.events['open'], [self.id] );
 	}
 	
+	/**
+	 * Close the menu.
+	 */
 	menumucil.prototype.close = function() {
 		var self = this;
 		self.pane.contentHeight = self.pane.outerHeight();
@@ -146,6 +194,9 @@
 		}, 10 );
 	}
 	
+	/**
+	 * Close the menu bypassing animations
+	 */
 	menumucil.prototype.closeNow = function() {
 		var self = this;
 		self.pane.addClass('transitions').css({
