@@ -20,6 +20,7 @@
 			closed: "&#9660;",
 			open: "&#9650;",
 			button_classes: null,
+			up: false,
 			cover: false
 		}, options);
 		
@@ -50,7 +51,7 @@
 		//------------------------------------------------------------
 		//  Cover mode?
 		//------------------------------------------------------------
-		if ( self.options['cover'] ) {
+		if ( self.options['cover'] || self.options['up'] ) {
 			self.menu.css({
 				position: 'absolute',
 				'z-index': 5000
@@ -86,7 +87,7 @@
 		//------------------------------------------------------------
 		//  Cover mode?
 		//------------------------------------------------------------
-		if ( self.options['cover'] ) {
+		if ( self.options['cover'] || self.options['up'] ) {
 			var height = self.clicker.height();
 			self.menu.after( '<div style="height:'+height+'px;clear:both"></div>')
 		}
@@ -117,8 +118,13 @@
 		self.pane.css({
 			'max-height': self.pane.contentHeight
 		});
-		self.pane.removeClass('closed');
-		self.pane.addClass('open');
+		if ( self.options['up'] ) {
+			self.menu.css({
+				'top': self.menu.position().top - self.pane.contentHeight
+			});
+		}
+		self.pane.removeClass( 'closed' );
+		self.pane.addClass( 'open' );
 		self.clicker.html( self.options['open'] );
 		self.pane.trigger( self.events['open'], [self.id] );
 	}

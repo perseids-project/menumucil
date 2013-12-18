@@ -1,2 +1,2 @@
 # menumucil
-JQuery plug-in for GPU accelerated drop-down menus.
+jQuery plug-in for GPU accelerated drop-down menus.
