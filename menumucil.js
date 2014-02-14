@@ -132,7 +132,7 @@
 		//------------------------
 		//	Register click event  
 		//------------------------
-		$( self.clicker ).click( function( _e ) {
+		$( self.clicker ).on( 'click touchstart', function( _e ) {
 			if ( self.isOpen() ) {
 				self.close();
 			}
